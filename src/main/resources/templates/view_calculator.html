@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>Simple Calculator</title>
+	
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"/>
+
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
+/*page styling*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Inter', sans-serif;
+}
+
+body {
+	background-color:  #94D9EA; 
+}
+
+.color {
+	color: #ff4500;
+}
+
+.container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+/*app styling*/
+.calculator {
+	width: 415px;
+	display: inline-block;
+	padding: 40px;
+	border-radius: 30px;
+	background-color:  #003147;
+	box-shadow: -6px -6px 9px #fff, 11px 11px 21px -8px #000;;
+}
+
+.calculator input{
+	width: 93%;
+	height: 45px;
+	margin: 8px;
+	border-radius: 20px;
+	font-size: 34px;
+	text-align: end;
+	padding: 0 20px;
+	border: 0;
+	outline: 0;
+	padding-right: 10px;
+	background-color: #e9e9e9;
+	box-shadow: -5px -7px 9px #fff inset, 5px 11px 17px -13px #000 inset;
+}
+
+button{
+	border-radius: 50px;
+	font-size: 28px;
+	font-weight: 500;
+	background-color: #e9e9e9;
+	width: 60px;
+	height: 60px;
+	margin: 8px;
+	border: 0;
+	outline: 0;
+}
+
+button:hover {
+	background-color: #d6d6d6;
+}
+
+.zero{
+	width: 145px;
+}
+
+/*create two columns that float next to each other*/
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.left {
+  width: 50%;
+  
+}
+
+.right {
+  width: 50%;
+}
+
+/*description styling*/
+h1 {
+	color: #111;
+	font-family: 'Trocchi', serif;
+	font-size: 45px;
+	font-weight: normal;
+	line-height: 24px;
+	text-align: center;
+	margin: 0;	
+}
+
+.subheader{
+	font-family: 'Trocchi', serif;
+	font-size: 26px;
+	font-weight: 300;
+	text-align: left;
+	margin: 0;
+}
+
+p{
+	font-family: 'Source Sans Pro', sans-serif;
+	text-align: justify;
+	font-size: 18px;
+	line-height: 26px;
+	text-indent: 30px;
+	text-justify: inter-word;
+	margin: 0;
+}
+
+ul{
+	list-style-position: inside;
+	font-family: 'Source Sans Pro', sans-serif;
+	text-indent: 60px;
+	
+}
+
+</style>	
+	
+</head>
+<body>
+<div class="column left">
+ 	<div class="container">
+ 		<div class="calculator">
+ 			<input type="text" name="screen" id="screen">
+ 			<div>
+ 				<button class="color">C</button>
+ 				<button class="color">(</button>
+ 				<button class="color">)</button>
+ 				<button class="color">/</button>
+ 				<button>7</button>
+ 				<button>8</button>
+ 				<button>9</button>
+ 				<button class="color">x</button>
+ 				<button>4</button>
+ 				<button>5</button>
+ 				<button>6</button>
+ 				<button class="color">-</button>
+ 				<button>1</button>
+ 				<button>2</button>
+ 				<button>3</button>
+ 				<button class="color">+</button>
+ 				<button class="zero">0</button>
+ 				<button class="color">.</button>
+ 				<button>=</button>
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>	
+ <div class="column right" style="background-color:#ffffff;">
+ 	<div class="container">
+ 		<h1>Simple Calculator Application</h1>
+ 		<br><br>
+ 		<p>This simple calculator was built using just core web technologies: HTML, CSS, and JavaScript.</p>
+ 		<br>
+ 		<h2 class="subheader">Features include:</h2>
+ 		<br>
+ 			<ul>
+ 				<li>performs basic operations like addition, subtraction, multiplication, and division</li>
+ 				<li>performs decimal operations</li>
+ 				<li>if you try to divide any number by zero, infinity will display</li>
+ 				<li>if you enter an invalid expression, it will not display any result</li>
+ 				<li>hit the C button to clear the display screen at any time</li>
+ 			</ul>
+ 	</div>
+ </div>
+<!-- Script -->
+<script type="text/javascript">
+let screen = document.getElementById("screen");
+
+buttons = document.querySelectorAll("button");
+
+let screenValue = "";
+
+for (item of buttons)
+	{item.addEventListener("click", (e) => {
+		buttonText = e.target.innerText;
+		if (buttonText == "x"){
+			buttonText = "*";
+			screenValue += buttonText;
+			screen.value = screenValue;
+		}
+		else if (buttonText == "C"){
+			screenValue = "";
+			screen.value = screenValue;
+		}
+		else if (buttonText == "="){
+			screen.value = eval(screenValue);
+		}
+		else {
+			screenValue += buttonText;
+			screen.value = screenValue;
+		}
+	})
+}
+</script>
+
+</body>
+</html>
+</html>

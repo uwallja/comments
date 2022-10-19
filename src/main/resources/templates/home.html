@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+
+
+
+</head>
+<body>
+
+	<section>
+		<br>
+		<div>
+			<div class="text-black text-center">
+				<h1>Welcome to my Comments Section</h1>
+				<p>... a different way of handling comments.</p>
+				<p>Thank you for leaving a comment. Your comments and suggestions are appreciated.
+			<br> <br>
+			<a th:href="@{login}"><button class="btn bg-dark text-white">Leave a Comment</button></a>
+			<a th:href="@{/portfolio}"><button class="btn bg-dark text-white">Go Back to Portfolio</button></a>
+			</div>
+		</div>
+
+		<div class="backimg"></div>
+
+	</section>
+
+
+	
+</body>
+</html>
