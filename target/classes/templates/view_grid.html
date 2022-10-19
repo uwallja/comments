@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="AnimatedGridStylesheet.css">
+<title>Animated Grid</title>
+
+<style>
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Inter', sans-serif;
+}
+
+body {
+	background-color:  #ccaaff; 
+}
+
+/* Create two unequal columns that float next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.left {
+  width: 50%;
+}
+
+.right {
+  width: 50%;
+}
+
+/*description styling*/
+h1 {
+	color: #ffff;
+	font-family: 'Trocchi', serif;
+	font-size: 65px;
+	font-weight: normal;
+	line-height: 24px;
+	text-align: center;
+	margin: 0;	
+}
+
+.subheader{
+	color: #ffff;
+	font-family: 'Trocchi', serif;
+	font-size: 26px;
+	font-weight: 300;
+	text-align: left;
+	text-indent: 40px;
+	margin: 0;
+}
+
+p{
+	color: #ffff;
+	font-family: 'Source Sans Pro', sans-serif;
+	text-align: center;
+	font-size: 24px;
+	line-height: 26px;
+	text-indent: 30px;
+	margin: 0;
+}
+
+ul{
+	color: #ffff;
+	font-size: 20px;
+	list-style-position: inside;
+	font-family: 'Source Sans Pro', sans-serif;
+	text-indent: 60px;
+	
+}
+
+/*grid styling*/
+* {
+    box-sizing: border-box;
+}
+
+.grid-container {
+    font-size: 0;
+    text-align: center;
+    width: 650px;
+    max-width: 100%;
+    margin: 40px auto 0 auto;
+    border: 2px solid;
+}
+
+.grid-item {
+    width: 25%;
+    padding: 5px;
+    display: inline-block;
+    margin: 35px auto 35px auto;
+    vertical-align: top;
+    
+}
+
+.box {
+    width: 75px;
+    height: 75px;
+    background-image: linear-gradient( 330deg, rgb(32, 42, 255) 0%, rgb(188, 197, 255) 100%);
+    background-image: linear-gradient( 330deg, rgb(32, 42, 255) 0%, rgb(188, 197, 255) 100%);
+    background-image: linear-gradient( 330deg, rgb(32, 42, 255) 0%, rgb(188, 197, 255) 100%);
+   
+    box-shadow: 0px 15px 23px 0px rgba(93, 81, 255, 0.35), 0px 5px 15px 0px rgba(90, 41, 179, 0.2);
+    display: block;
+    margin: 0 auto 30px auto;
+    border-radius: 5px;
+}
+
+.grid-item .name-plate {
+    background: rgba(0, 0, 0, .08);
+    color: #220A41;
+    padding: 3px 5px 4px 5px;
+    word-break: break-all;
+    font-size: 16px;
+    font-family: system-ui;
+    border-radius: 5px;
+}
+
+ #shake {
+   animation: shake 0.5s;
+   animation-iteration-count: infinite;
+ }
+ 
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+#fade {
+     animation: fade 6s;
+     animation-direction: alternate;
+     animation-iteration-count: infinite;
+    }
+ 
+ @keyframes fade{
+   0% { opacity: 0; }
+  10% { opacity: 0.1; }
+  20% { opacity: 0.2; }
+  30% { opacity: 0.3; }
+  40% { opacity: 0.4; }
+  50% { opacity: 0.5; }
+  60% { opacity: 0.6; }
+  70% { opacity: 0.7; }
+  80% { opacity: 0.8; }
+  90% { opacity: 0.9; }
+  100% { opacity: 1; }
+}
+
+#jelly {
+  animation: jello 1.5s infinite;
+  transform-origin: center
+}
+
+@keyframes jello {
+  17% { border-bottom-right-radius: 3px; }
+  25% { transform: translateY(9px) rotate(22.5deg); }
+  50% {
+    transform: translateY(18px) scale(1,.9) rotate(45deg) ;
+    border-bottom-right-radius: 40px;
+  }
+  75% { transform: translateY(9px) rotate(67.5deg); }
+  100% { transform: translateY(0) rotate(90deg); }
+}
+
+#bounce {
+	animation: bounce 0.5s;
+    animation-direction: alternate-reverse;
+    animation-timing-function: cubic-bezier(.5, 0.05, .5, .5);
+    transform3d:(0, 0, 0);
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+   0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+   40% {transform: translateY(-30px);} 
+   60% {transform: translateY(-15px);} 
+} 
+
+#tada{
+	animation: tada 1s infinte;
+}
+
+@keyframes tada {
+	0% {transform: scale(1);}
+	10%, 20% {transform: scale(0.9) rotate(-3deg);}
+    30%, 50%, 70%, 90% {transform: scale(1.1) rotate(3deg);}
+    40%, 60%, 80% {transform: scale(1.1) rotate(-3deg);}
+    100% {transform: scale(1) rotate(0);}
+}
+
+/*#groove {}*/
+
+#swing{
+	animation: swing 2s infinite;
+	animation-direction: reverse;
+}
+
+@keyframes swing { 
+    20% { transform: rotate(15deg); } 
+    40% { transform: rotate(-10deg); } 
+    60% { transform: rotate(5deg); } 
+    80% { transform: rotate(-5deg); } 
+    100% { transform: rotate(0deg); } 
+}
+
+/*#squeeze{}*/
+
+#flicker{
+ 	animation: flicker 2s infinite;
+ 	animation-delay: 0.5s;
+ 	animation-timing-function: ease-out;
+ 	animation-fill-mode: backwards;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes flicker {
+	0% {opacity: 1;}
+	20% {opacity: 0.75;}
+	50% {opacity: 1;}
+	70% {opacity: 0.75;}
+  	100% {opacity: 1;}
+}
+
+/*#jerk{}*/
+
+#blink{
+	animation: blink .5s infinite;
+ 	animation-delay: 0.3s;
+ 	animation-duration: 1.0s;
+ 	animation-timing-function: ease-out;
+}
+
+@keyframes blink {
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+
+#pop{
+	animation-duration: pop infinite;
+    animation-fill-mode: backwards;
+}
+
+@keyframes pop {
+    0% {transform: scale(1);}
+   10%, 20% {transform: scale(0.9) rotate(-3deg);}
+   30%, 50%, 70%, 90% {transform: scale(1.1) rotate(3deg);}
+   40%, 60%, 80% {transform: scale(1.1) rotate(-3deg);}
+  100% {transform: scale(1) rotate(0);}
+}
+</style>
+
+</head>
+<body>
+
+<div class="column left">
+	<div class="container">
+	<br><br><br><br><br><br><br>
+ 		<h1>Animated Grid</h1>
+ 		<br><br><br><br>
+ 		<p>This animated grid was built using HTML and CSS.</p>
+ 		<br><br>
+ 		<h2 class="subheader">Features include:</h2>
+ 		<br>
+ 			<ul>
+ 				<li>the grid consists of 12 boxes</li>
+ 				<li>each box is animated according to its title</li>
+ 				<li>tada, groove, squeeze, jerk, and pop are not animated</li>
+ 			</ul>
+ 	</div>
+</div>
+
+
+<div class="column right" style="background-color:#ffffff;">
+  <div class="grid-container">
+        <div class="grid-item">
+            <span class="box" id="shake"></span>
+            <span class="name-plate">"shake"</span>
+        </div>
+
+        <div class="grid-item">
+            <span class="box" id="fade"></span>
+            <span class="name-plate">"fade"</span>
+        </div>
+
+
+        <div class="grid-item">
+            <span class="box" id="jelly"></span>
+            <span class="name-plate">"jelly"</span>
+        </div>
+
+
+        <div class="grid-item">
+            <span class="box" id="bounce"></span>
+            <span class="name-plate">"bounce"</span>
+        </div>
+
+        <div class="grid-item">
+            <span class="box" id="tada"></span>
+            <span class="name-plate">"tada"</span>
+        </div>
+
+        <div class="grid-item">
+            <span class="box" id="groove"></span>
+            <span class="name-plate">"groove"</span>
+        </div>
+
+        <div class="grid-item">
+            <span class="box" id="swing"></span>
+            <span class="name-plate">"swing"</span>
+        </div>
+
+        <div class="grid-item">
+            <span class="box" id="squeeze"></span>
+            <span class="name-plate">"squeeze"</span>
+        </div>
+
+        <div class="grid-item">
+            <span class="box" id="flicker"></span>
+            <span class="name-plate">"flicker"</span>
+        </div>
+
+        <div class="grid-item" id="jerk">
+            <span class="box"></span>
+            <span class="name-plate">"jerk"</span>
+        </div>
+
+        <div class="grid-item">
+            <span class="box" id="blink"></span>
+            <span class="name-plate">"blink"</span>
+        </div>
+
+        <div class="grid-item">
+            <span class="box" id ="pop"></span>
+            <span class="name-plate">"pop"</span>
+        </div>
+        
+        <div class="column right"></div>
+        
+    </div>
+</div>
+
+</body>
+</html>

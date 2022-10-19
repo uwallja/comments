@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+	<html xmlns:th="http://www.thymeleaf.org" lang="en">
+		<head>
+			<meta charset="ISO-8859-1">
+			
+		   <link th:href="@{/css/style_portfolio.css}" rel="stylesheet"> 
+		   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"/>
+			
+	
+			<!-- Boxicons from https://boxicons.com/-->
+			<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+			
+			<title>My Portfolio</title>
+			
+		</head>
+		<body>
+			<header class="l-header">
+			
+			<!-- the navigation menu -->
+				<nav class="nav bd-grid">
+					<div>
+						<a href="#" class="nav__logo">Full Stack Java Developer course at Per Scholas, Powered by TEKsystems</a>
+					</div>
+					<div class="nav__menu" id="nav-menu">
+						<ul class="nav__list">
+							<li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+							<li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+							<li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+							<li class="nav__item"><a href="#portfolio" class="nav__link">Project Portfolio</a></li>
+							<li class="nav__item"><a href="#contact" class="nav__link">Comments</a></li>
+						</ul>
+					</div>
+					<div class="nav__toggle" id="nav-toggle">
+						<i class='bx bx-menu'></i>
+					</div>
+				</nav>
+			</header>
+			<!-- the Home page -->
+			<main>
+				<section class="home" id="home">
+					<div class="home__container bd-grid">
+						<h1 class="home__title">Welcome</h1>
+						<div class="home__scroll">
+							<a href="#about" class="home__scroll-link"><i class='bx bx-up-arrow-alt'></i>Scroll down</a>
+						</div>
+						
+					</div>
+				</section>
+			</main>
+			
+			<!-- the About page -->
+			<section class="about section" id="about">
+                <h2 class="section-title">About</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="/img/JW.jpg" alt="JW enclosed in a circle">
+                    </div>
+
+                    <div>
+                        <h2 class="about__subtitle">Janette Wallace</h2>
+                        <span class="about__profession">Full Stack Developer</span>
+                        <p class="about__text">After nearly a decade in finance, I decided to step away from one career and invest in another by enrolling in a full-time, rigorous tech 
+                        boot camp to launch my tech career.  This 15-week intensive course enhanced my fundamental programming knowledge in Java 17, JDBC, Java networking, multi-threading, 
+                        collections, basic I/O, concurrency, Spring MVC, Spring Boot, and Maven, among many other topic areas.  
+						</p>
+                    </div>
+                    <div class="about__social">
+                            <a th:href="@{https://www.linkedin.com/in/janette-wallace-1a1215a0}" target="_blank" class="about__social-icon"><i class='bx bxl-linkedin' ></i></a>
+                            <a th:href="@{https://github.com/uwallja}" target="_blank" class="about__social-icon"><i class='bx bxl-github' ></i></a>
+                    </div> 
+                </div>
+            </section>
+			
+			<!-- the Skills page -->
+			<section class="skills section" id="skills"> 
+                <h2 class="section-title">Skills</h2>
+
+                <div class="skills__container bd-grid">
+                    <div class="skills__box">
+                        <h3 class="skills__subtitle">Programming Languages</h3>
+                        <span class="skills__name">HTML</span>
+                        <span class="skills__name">CSS</span>
+                        <span class="skills__name">JavaScript</span>
+                        <span class="skills__name">Java</span>
+                        <span class="skills__name">Spring Boot</span>
+                        <span class="skills__name">Maven</span>
+                        
+                        <h3 class="skills__subtitle">Software</h3>
+                        <span class="skills__name">Google Workspace</span>
+                        <span class="skills__name">Monday.com</span>
+                        <span class="skills__name">Jira</span>
+                    </div>
+
+                    <div class="skills__img">
+                        <img src="/img/placeholder.png" alt="">
+                    </div>
+                </div>
+            </section>
+           
+			<!-- the portfolio section -->
+			 <section class="portfolio section" id="portfolio">
+                <h2 class="section-title">Project Portfolio</h2>
+
+                <div class="portfolio__container bd-grid">
+                    <div class="portfolio__img">
+                        <img src="/img/gamebook.png" alt="image of Turtle's Flute book front cover"> 
+
+                        <div class="portfolio__link">
+ <!-- if can get GUI to display then activate --><a href="#portfolio" class="portfolio__link-name">Coming Soon</a>
+                        </div>
+                    </div>
+               
+					 <div class="portfolio__img">
+                        <img src="/img/placeholder.png" alt="tic-tac-toe game board">
+
+                        <div class="portfolio__link">
+                            <a href="#portfolio" class="portfolio__link-name">Coming Soon</a>
+                        </div>
+                    </div>   
+                    
+                    <div class="portfolio__img">
+                        <img src="/img/animatedgrid.png" alt="animated grid">
+
+                        <div class="portfolio__link">
+                            <a th:href="@{/viewGrid}" target="_blank"  class="portfolio__link-name">View Details</a>
+                        </div>
+                    </div>  
+                    
+                     <div class="portfolio__img">
+                        <img src="/img/placeholder.png" alt="placeholder image"> 
+
+                        <div class="portfolio__link">
+                            <a href="#portfolio" target="" class="portfolio__link-name">Coming Soon</a>
+                        </div>
+                    </div>
+                     
+                    <div class="portfolio__img">
+                        <img src="/img/calculator.png" alt="image of calculator"> 
+
+                        <div class="portfolio__link">
+                            <a th:href="@{/viewCalculator}" target="_blank" class="portfolio__link-name">View Details</a>
+                        </div>
+                    </div>
+                  
+                    <div class="portfolio__img">
+                        <img src="/img/placeholder.png" alt="placeholder image"> 
+
+                        <div class="portfolio__link">
+                            <a href="#portfolio" target="" class="portfolio__link-name">Coming Soon</a>
+                        </div>
+                    </div> 
+                                   
+                </div>
+            </section>
+           
+			<!-- the Contact page which includes the first implementation of form-->
+			<section class="contact section" id="contact">
+                <h2 class="section-title">Comments</h2>
+
+                <div class="contact__container bd-grid">
+                
+                 
+                    <div class="contact__info">
+                        <h3 class="contact__subtitle">Suggestions?</h3>
+                        <span class="contact__text">If you share your suggestions, it will allow me to improve the design or content. 
+                        Your tips will help me to improve my work. Thank you for being the driving force behind my success. </span>
+                        <h3 class="contact__subtitle">Comments?</h3>
+                        <span class="contact__text">If you enjoyed the content on this site, please leave a comment. Your comments/reviews 
+                        help other visitors get to know the value of the content. </span>                   
+                    </div>
+  	
+  		<!-- login prompt -->
+  	
+                    <form action="" class="contact__form">
+                        <div class="contact__inputs">
+                            <input type="text" placeholder="Your Name" class="contact__input" required readonly>
+                            <input type="email" id="email" placeholder="Your Email" class="contact__input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required readonly>
+                        </div>
+
+						<a href="/" th:href="@{/}">
+                       <textarea name="" id="" cols="0" rows="10" placeholder="login required to leave a message... please click here to get started" class="contact__input"></textarea>
+					   </a>
+                      <input type="submit" value="Submit" class="contact__button">
+                       
+                    
+                    </form>
+                    
+                    </div>
+            </section>
+            
+		<!-- the Footer section which includes the second implementation of form-->	
+		<footer class="footer section">
+            <div class="footer__container bd-grid">
+                <div class="footer__data">
+                    <h2 class="footer__title"></h2>
+                    <p class="footer__text"></p>
+                             
+            		<h2 class="footer__title">Subscribe to Our Fantasy Blog</h2>
+ 					<form action="" class="subscribe__form">
+                        
+                            <input type="email" id="email" placeholder="Enter Your Email Here Please" class="subscribe__input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+                       	    <input type="submit" value="Subscribe" class="subscribe__button">
+                        
+                    </form>
+              </div> 
+ 
+                <div class="footer__data">
+                    <h2 class="footer__title">EXPLORE</h2>
+                    <ul>
+                        <li><a href="#home" class="footer__link">Home</a></li>
+                        <li><a href="#about" class="footer__link">About</a></li>
+                        <li><a href="#skills" class="footer__link">Skills</a></li>
+                        <li><a href="#portfolio" class="footer__link">Project Portfolio</a></li>
+                        <li><a href="#contact" class="footer__link">Comments</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__data">
+                    <h2 class="footer__title">CONNECT</h2>
+                    <a th:href="@{https://www.linkedin.com/in/janette-wallace-1a1215a0}" target="_blank" class="footer__social"><i class='bx bxl-linkedin' ></i></a>
+                    <a th:href="@{https://github.com/uwallja}" target="_blank" class="footer__social"><i class='bx bxl-github' ></i></a>
+                    <br>
+                    <br>
+                    <br>
+                    <h2 class="footer__title">Thank You for Visiting!</h2>
+                    <p class="footer_link">ATTENTION: If you believe that the posting of any material infringes
+                    your copyright, be sure to contact us and your material will be removed!</p>
+                </div>
+
+            </div>
+        </footer>	
+				
+		
+		<!-- JavaScript Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" 
+		crossorigin="anonymous"></script>
+		
+		<!-- ScrollReveal JS Library from https://scrollrevealjs.org/-->
+		<script src="https://unpkg.com/scrollreveal"></script>
+		
+		<!-- main js file -->
+		<script type="text/javascript" th:src="@{/js/main.js}"></script>
+		
+		<!-- th -->
+		<script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+  		<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+		
+		
+		</body>
+	</html>

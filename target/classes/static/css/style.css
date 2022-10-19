@@ -1,0 +1,22 @@
+@charset "ISO-8859-1";
+
+.backimg {
+	background: url("../img/comments.jpg");
+	height: 90%;
+	width: 90%;
+	margin-top: 20px;
+	background-repeat: no-repeat;
+	position: absolute;
+	background-size: contain;
+}
+
+.navbar .nav-item .nav-link {
+	font-size: 20px;
+	color: white;
+}
+
+.navbar .nav-item:hover .nav-link {
+	background: white;
+	color: black;
+	border-radius: 10px;
+}
